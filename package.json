@@ -2,9 +2,8 @@
   "name": "@vimalkrml/dev-template",
   "version": "1.0.1",
   "description": "CSS reset and custom grid system starter",
-  "main": "dist/style.css",
+  "main": "src/style.css",
   "files": [
-    "dist",
     "src"
   ],
   "keywords": [
