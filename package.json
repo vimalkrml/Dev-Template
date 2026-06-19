@@ -1,17 +1,20 @@
 {
-  "name": "@vimalkrml/dev-template",
-  "version": "1.0.4",
-  "description": "CSS reset and custom grid system starter",
-  "main": "src/style.css",
+  "name": "flux-css",
+  "version": "1.0.0",
+  "description": "A utility-first CSS framework with zero build step — dark mode, animations, forms, and a full design token system built in.",
+  "main": "src/index.css",
   "files": [
     "src"
   ],
   "keywords": [
     "css",
-    "reset",
+    "utility",
+    "framework",
+    "dark-mode",
     "grid",
-    "starter",
-    "template"
+    "animations",
+    "forms",
+    "no-build"
   ],
   "license": "MIT"
 }
