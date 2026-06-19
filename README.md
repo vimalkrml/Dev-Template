@@ -1,6 +1,9 @@
-# @vimalkrml/dev-template
+# FluxGrid CSS
 
-A utility-first CSS framework that works without any build step, config, or CLI. Drop one `<link>` tag and start building — with dark mode, animations, form components, and a full design token system built right in.
+> By [Datafluxgrid](https://www.linkedin.com/company/datafluxgrid)
+
+A utility-first CSS framework with zero build step — dark mode, animations,
+form components, and a full design token system built right in.
 
 [![npm version](https://img.shields.io/npm/v/@vimalkrml/dev-template.svg?style=for-the-badge&color=CB3837)](https://www.npmjs.com/package/@vimalkrml/dev-template)
 [![npm downloads](https://img.shields.io/npm/dt/@vimalkrml/dev-template.svg?style=for-the-badge&color=CB3837)](https://www.npmjs.com/package/@vimalkrml/dev-template)
