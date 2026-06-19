@@ -3,3 +3,8 @@ pages/
 .gitignore
 *.log
 node_modules/
+src/assets/
+src/js/
+src/css/footer.css
+src/css/header.css
+src/css/home.css
