@@ -1,0 +1,392 @@
+@keyframes c-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes c-ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes c-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes c-bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes c-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-4px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes c-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes c-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes c-slide-in-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes c-slide-in-down {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes c-slide-in-left {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes c-slide-in-right {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes c-scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes c-scale-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes c-flip-x {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes c-flip-y {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes c-wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes c-heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes c-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes c-skeleton {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes c-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes c-draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.c-animate-spin {
+  animation: c-spin 1s linear infinite;
+}
+.c-animate-ping {
+  animation: c-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.c-animate-pulse {
+  animation: c-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.c-animate-bounce {
+  animation: c-bounce 1s infinite;
+}
+.c-animate-shake {
+  animation: c-shake 0.5s ease-in-out;
+}
+.c-animate-fade-in {
+  animation: c-fade-in 300ms ease-out forwards;
+}
+.c-animate-fade-out {
+  animation: c-fade-out 300ms ease-in forwards;
+}
+.c-animate-slide-up {
+  animation: c-slide-in-up 300ms ease-out forwards;
+}
+.c-animate-slide-down {
+  animation: c-slide-in-down 300ms ease-out forwards;
+}
+.c-animate-slide-left {
+  animation: c-slide-in-left 300ms ease-out forwards;
+}
+.c-animate-slide-right {
+  animation: c-slide-in-right 300ms ease-out forwards;
+}
+.c-animate-scale-in {
+  animation: c-scale-in 200ms ease-out forwards;
+}
+.c-animate-scale-out {
+  animation: c-scale-out 200ms ease-in forwards;
+}
+.c-animate-wiggle {
+  animation: c-wiggle 1s ease-in-out infinite;
+}
+.c-animate-heartbeat {
+  animation: c-heartbeat 1.5s ease-in-out infinite;
+}
+.c-animate-float {
+  animation: c-float 3s ease-in-out infinite;
+}
+.c-animate-blink {
+  animation: c-blink 1s step-end infinite;
+}
+.c-animate-none {
+  animation: none;
+}
+
+.c-animate-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--c-gray-100) 25%,
+    var(--c-gray-200) 50%,
+    var(--c-gray-100) 75%
+  );
+  background-size: 200% 100%;
+  animation: c-skeleton 1.5s infinite;
+}
+
+.c-animate-delay-75 {
+  animation-delay: 75ms;
+}
+.c-animate-delay-100 {
+  animation-delay: 100ms;
+}
+.c-animate-delay-150 {
+  animation-delay: 150ms;
+}
+.c-animate-delay-200 {
+  animation-delay: 200ms;
+}
+.c-animate-delay-300 {
+  animation-delay: 300ms;
+}
+.c-animate-delay-500 {
+  animation-delay: 500ms;
+}
+.c-animate-delay-700 {
+  animation-delay: 700ms;
+}
+.c-animate-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.c-animate-duration-75 {
+  animation-duration: 75ms;
+}
+.c-animate-duration-100 {
+  animation-duration: 100ms;
+}
+.c-animate-duration-150 {
+  animation-duration: 150ms;
+}
+.c-animate-duration-200 {
+  animation-duration: 200ms;
+}
+.c-animate-duration-300 {
+  animation-duration: 300ms;
+}
+.c-animate-duration-500 {
+  animation-duration: 500ms;
+}
+.c-animate-duration-700 {
+  animation-duration: 700ms;
+}
+.c-animate-duration-1000 {
+  animation-duration: 1000ms;
+}
+.c-animate-duration-2000 {
+  animation-duration: 2000ms;
+}
+
+.c-animate-once {
+  animation-iteration-count: 1;
+}
+.c-animate-infinite {
+  animation-iteration-count: infinite;
+}
+.c-animate-repeat-2 {
+  animation-iteration-count: 2;
+}
+.c-animate-repeat-3 {
+  animation-iteration-count: 3;
+}
+
+.c-animate-fill-none {
+  animation-fill-mode: none;
+}
+.c-animate-fill-forwards {
+  animation-fill-mode: forwards;
+}
+.c-animate-fill-backwards {
+  animation-fill-mode: backwards;
+}
+.c-animate-fill-both {
+  animation-fill-mode: both;
+}
+
+.c-animate-running {
+  animation-play-state: running;
+}
+.c-animate-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c-animate-spin,
+  .c-animate-ping,
+  .c-animate-pulse,
+  .c-animate-bounce,
+  .c-animate-shake,
+  .c-animate-wiggle,
+  .c-animate-heartbeat,
+  .c-animate-float,
+  .c-animate-skeleton {
+    animation: none;
+  }
+}

@@ -1,0 +1,726 @@
+.c-border {
+  border: 1px solid var(--c-border);
+}
+.c-border-0 {
+  border: none;
+}
+.c-border-2 {
+  border-width: 2px;
+}
+.c-border-4 {
+  border-width: 4px;
+}
+.c-border-t {
+  border-top: 1px solid var(--c-border);
+}
+.c-border-r {
+  border-right: 1px solid var(--c-border);
+}
+.c-border-b {
+  border-bottom: 1px solid var(--c-border);
+}
+.c-border-l {
+  border-left: 1px solid var(--c-border);
+}
+.c-border-x {
+  border-left: 1px solid var(--c-border);
+  border-right: 1px solid var(--c-border);
+}
+.c-border-y {
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+}
+.c-border-solid {
+  border-style: solid;
+}
+.c-border-dashed {
+  border-style: dashed;
+}
+.c-border-dotted {
+  border-style: dotted;
+}
+.c-border-double {
+  border-style: double;
+}
+.c-border-none {
+  border-style: none;
+}
+
+.c-divide-x > * + * {
+  border-left: 1px solid var(--c-border);
+}
+.c-divide-y > * + * {
+  border-top: 1px solid var(--c-border);
+}
+
+.c-rounded-none {
+  border-radius: 0;
+}
+.c-rounded-sm {
+  border-radius: 4px;
+}
+.c-rounded {
+  border-radius: 8px;
+}
+.c-rounded-md {
+  border-radius: 12px;
+}
+.c-rounded-lg {
+  border-radius: 16px;
+}
+.c-rounded-xl {
+  border-radius: 24px;
+}
+.c-rounded-2xl {
+  border-radius: 32px;
+}
+.c-rounded-3xl {
+  border-radius: 48px;
+}
+.c-rounded-full {
+  border-radius: 9999px;
+}
+.c-rounded-t {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.c-rounded-b {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.c-rounded-l {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.c-rounded-r {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.c-rounded-tl {
+  border-top-left-radius: 8px;
+}
+.c-rounded-tr {
+  border-top-right-radius: 8px;
+}
+.c-rounded-bl {
+  border-bottom-left-radius: 8px;
+}
+.c-rounded-br {
+  border-bottom-right-radius: 8px;
+}
+
+.c-shadow-none {
+  box-shadow: none;
+}
+.c-shadow-xs {
+  box-shadow: var(--c-shadow-xs);
+}
+.c-shadow-sm {
+  box-shadow: var(--c-shadow-sm);
+}
+.c-shadow {
+  box-shadow: var(--c-shadow-md);
+}
+.c-shadow-md {
+  box-shadow: var(--c-shadow-md);
+}
+.c-shadow-lg {
+  box-shadow: var(--c-shadow-lg);
+}
+.c-shadow-xl {
+  box-shadow: var(--c-shadow-xl);
+}
+.c-shadow-2xl {
+  box-shadow: var(--c-shadow-2xl);
+}
+.c-shadow-inner {
+  box-shadow: var(--c-shadow-inner);
+}
+
+.c-ring-0 {
+  box-shadow: 0 0 0 0px var(--c-focus);
+}
+.c-ring-1 {
+  box-shadow: 0 0 0 1px var(--c-focus);
+}
+.c-ring-2 {
+  box-shadow: 0 0 0 2px var(--c-focus);
+}
+.c-ring-4 {
+  box-shadow: 0 0 0 4px var(--c-focus);
+}
+.c-ring-inset {
+  box-shadow: inset 0 0 0 2px var(--c-focus);
+}
+
+.c-opacity-0 {
+  opacity: 0;
+}
+.c-opacity-5 {
+  opacity: 0.05;
+}
+.c-opacity-10 {
+  opacity: 0.1;
+}
+.c-opacity-20 {
+  opacity: 0.2;
+}
+.c-opacity-25 {
+  opacity: 0.25;
+}
+.c-opacity-30 {
+  opacity: 0.3;
+}
+.c-opacity-40 {
+  opacity: 0.4;
+}
+.c-opacity-50 {
+  opacity: 0.5;
+}
+.c-opacity-60 {
+  opacity: 0.6;
+}
+.c-opacity-70 {
+  opacity: 0.7;
+}
+.c-opacity-75 {
+  opacity: 0.75;
+}
+.c-opacity-80 {
+  opacity: 0.8;
+}
+.c-opacity-90 {
+  opacity: 0.9;
+}
+.c-opacity-95 {
+  opacity: 0.95;
+}
+.c-opacity-100 {
+  opacity: 1;
+}
+
+.c-transition {
+  transition: all 300ms var(--c-ease-in-out);
+}
+.c-transition-none {
+  transition: none;
+}
+.c-transition-all {
+  transition: all 300ms var(--c-ease-in-out);
+}
+.c-transition-colors {
+  transition:
+    color 300ms,
+    background-color 300ms,
+    border-color 300ms,
+    fill 300ms,
+    stroke 300ms;
+}
+.c-transition-opacity {
+  transition: opacity 300ms var(--c-ease-in-out);
+}
+.c-transition-shadow {
+  transition: box-shadow 300ms var(--c-ease-in-out);
+}
+.c-transition-transform {
+  transition: transform 300ms var(--c-ease-in-out);
+}
+
+.c-duration-75 {
+  transition-duration: 75ms;
+}
+.c-duration-100 {
+  transition-duration: 100ms;
+}
+.c-duration-150 {
+  transition-duration: 150ms;
+}
+.c-duration-200 {
+  transition-duration: 200ms;
+}
+.c-duration-300 {
+  transition-duration: 300ms;
+}
+.c-duration-500 {
+  transition-duration: 500ms;
+}
+.c-duration-700 {
+  transition-duration: 700ms;
+}
+.c-duration-1000 {
+  transition-duration: 1000ms;
+}
+
+.c-ease-linear {
+  transition-timing-function: linear;
+}
+.c-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.c-ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.c-ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.c-ease-bounce {
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.c-ease-spring {
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.c-delay-75 {
+  transition-delay: 75ms;
+}
+.c-delay-100 {
+  transition-delay: 100ms;
+}
+.c-delay-150 {
+  transition-delay: 150ms;
+}
+.c-delay-200 {
+  transition-delay: 200ms;
+}
+.c-delay-300 {
+  transition-delay: 300ms;
+}
+.c-delay-500 {
+  transition-delay: 500ms;
+}
+.c-delay-700 {
+  transition-delay: 700ms;
+}
+
+.c-transform {
+  transform: translateX(var(--c-tx, 0)) translateY(var(--c-ty, 0))
+    rotate(var(--c-rotate, 0)) scaleX(var(--c-sx, 1)) scaleY(var(--c-sy, 1))
+    skewX(var(--c-skew-x, 0)) skewY(var(--c-skew-y, 0));
+}
+.c-transform-none {
+  transform: none;
+}
+.c-transform-gpu {
+  transform: translateZ(0);
+}
+
+.c-scale-0 {
+  transform: scale(0);
+}
+.c-scale-50 {
+  transform: scale(0.5);
+}
+.c-scale-75 {
+  transform: scale(0.75);
+}
+.c-scale-90 {
+  transform: scale(0.9);
+}
+.c-scale-95 {
+  transform: scale(0.95);
+}
+.c-scale-100 {
+  transform: scale(1);
+}
+.c-scale-105 {
+  transform: scale(1.05);
+}
+.c-scale-110 {
+  transform: scale(1.1);
+}
+.c-scale-125 {
+  transform: scale(1.25);
+}
+.c-scale-150 {
+  transform: scale(1.5);
+}
+
+.c-rotate-0 {
+  transform: rotate(0deg);
+}
+.c-rotate-1 {
+  transform: rotate(1deg);
+}
+.c-rotate-2 {
+  transform: rotate(2deg);
+}
+.c-rotate-3 {
+  transform: rotate(3deg);
+}
+.c-rotate-6 {
+  transform: rotate(6deg);
+}
+.c-rotate-12 {
+  transform: rotate(12deg);
+}
+.c-rotate-45 {
+  transform: rotate(45deg);
+}
+.c-rotate-90 {
+  transform: rotate(90deg);
+}
+.c-rotate-180 {
+  transform: rotate(180deg);
+}
+.c-neg-rotate-1 {
+  transform: rotate(-1deg);
+}
+.c-neg-rotate-2 {
+  transform: rotate(-2deg);
+}
+.c-neg-rotate-6 {
+  transform: rotate(-6deg);
+}
+.c-neg-rotate-12 {
+  transform: rotate(-12deg);
+}
+.c-neg-rotate-45 {
+  transform: rotate(-45deg);
+}
+.c-neg-rotate-90 {
+  transform: rotate(-90deg);
+}
+
+.c-translate-x-0 {
+  transform: translateX(0);
+}
+.c-translate-x-1 {
+  transform: translateX(4px);
+}
+.c-translate-x-2 {
+  transform: translateX(8px);
+}
+.c-translate-x-4 {
+  transform: translateX(16px);
+}
+.c-translate-x-full {
+  transform: translateX(100%);
+}
+.c-neg-translate-x-full {
+  transform: translateX(-100%);
+}
+.c-translate-y-0 {
+  transform: translateY(0);
+}
+.c-translate-y-1 {
+  transform: translateY(4px);
+}
+.c-translate-y-2 {
+  transform: translateY(8px);
+}
+.c-translate-y-4 {
+  transform: translateY(16px);
+}
+.c-translate-y-full {
+  transform: translateY(100%);
+}
+.c-neg-translate-y-full {
+  transform: translateY(-100%);
+}
+.c-neg-translate-y-1 {
+  transform: translateY(-4px);
+}
+.c-neg-translate-y-2 {
+  transform: translateY(-8px);
+}
+
+.c-skew-x-1 {
+  transform: skewX(1deg);
+}
+.c-skew-x-2 {
+  transform: skewX(2deg);
+}
+.c-skew-x-3 {
+  transform: skewX(3deg);
+}
+.c-skew-y-1 {
+  transform: skewY(1deg);
+}
+.c-skew-y-2 {
+  transform: skewY(2deg);
+}
+.c-skew-y-3 {
+  transform: skewY(3deg);
+}
+
+.c-origin-center {
+  transform-origin: center;
+}
+.c-origin-top {
+  transform-origin: top;
+}
+.c-origin-top-right {
+  transform-origin: top right;
+}
+.c-origin-right {
+  transform-origin: right;
+}
+.c-origin-bottom-right {
+  transform-origin: bottom right;
+}
+.c-origin-bottom {
+  transform-origin: bottom;
+}
+.c-origin-bottom-left {
+  transform-origin: bottom left;
+}
+.c-origin-left {
+  transform-origin: left;
+}
+.c-origin-top-left {
+  transform-origin: top left;
+}
+
+.c-blur-none {
+  filter: blur(0);
+}
+.c-blur-sm {
+  filter: blur(4px);
+}
+.c-blur {
+  filter: blur(8px);
+}
+.c-blur-md {
+  filter: blur(12px);
+}
+.c-blur-lg {
+  filter: blur(16px);
+}
+.c-blur-xl {
+  filter: blur(24px);
+}
+.c-blur-2xl {
+  filter: blur(40px);
+}
+.c-blur-3xl {
+  filter: blur(64px);
+}
+
+.c-brightness-0 {
+  filter: brightness(0);
+}
+.c-brightness-50 {
+  filter: brightness(0.5);
+}
+.c-brightness-75 {
+  filter: brightness(0.75);
+}
+.c-brightness-90 {
+  filter: brightness(0.9);
+}
+.c-brightness-95 {
+  filter: brightness(0.95);
+}
+.c-brightness-100 {
+  filter: brightness(1);
+}
+.c-brightness-105 {
+  filter: brightness(1.05);
+}
+.c-brightness-110 {
+  filter: brightness(1.1);
+}
+.c-brightness-125 {
+  filter: brightness(1.25);
+}
+.c-brightness-150 {
+  filter: brightness(1.5);
+}
+.c-brightness-200 {
+  filter: brightness(2);
+}
+
+.c-contrast-0 {
+  filter: contrast(0);
+}
+.c-contrast-50 {
+  filter: contrast(0.5);
+}
+.c-contrast-75 {
+  filter: contrast(0.75);
+}
+.c-contrast-100 {
+  filter: contrast(1);
+}
+.c-contrast-125 {
+  filter: contrast(1.25);
+}
+.c-contrast-150 {
+  filter: contrast(1.5);
+}
+.c-contrast-200 {
+  filter: contrast(2);
+}
+
+.c-grayscale {
+  filter: grayscale(100%);
+}
+.c-grayscale-0 {
+  filter: grayscale(0);
+}
+.c-invert {
+  filter: invert(100%);
+}
+.c-invert-0 {
+  filter: invert(0);
+}
+.c-sepia {
+  filter: sepia(100%);
+}
+.c-sepia-0 {
+  filter: sepia(0);
+}
+
+.c-saturate-0 {
+  filter: saturate(0);
+}
+.c-saturate-50 {
+  filter: saturate(0.5);
+}
+.c-saturate-100 {
+  filter: saturate(1);
+}
+.c-saturate-150 {
+  filter: saturate(1.5);
+}
+.c-saturate-200 {
+  filter: saturate(2);
+}
+
+.c-backdrop-blur-none {
+  backdrop-filter: blur(0);
+}
+.c-backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+.c-backdrop-blur {
+  backdrop-filter: blur(8px);
+}
+.c-backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+.c-backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+.c-backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+}
+.c-backdrop-blur-2xl {
+  backdrop-filter: blur(40px);
+}
+
+.c-hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 300ms var(--c-ease-out);
+}
+.c-hover-scale-sm:hover {
+  transform: scale(1.02);
+  transition: transform 300ms var(--c-ease-out);
+}
+.c-hover-scale-lg:hover {
+  transform: scale(1.1);
+  transition: transform 300ms var(--c-ease-out);
+}
+.c-hover-opacity:hover {
+  opacity: 0.8;
+  transition: opacity 300ms;
+}
+.c-hover-shadow:hover {
+  box-shadow: var(--c-shadow-lg);
+  transition: box-shadow 300ms;
+}
+.c-hover-shadow-xl:hover {
+  box-shadow: var(--c-shadow-xl);
+  transition: box-shadow 300ms;
+}
+.c-hover-brightness:hover {
+  filter: brightness(1.1);
+  transition: filter 300ms;
+}
+.c-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--c-shadow-lg);
+  transition:
+    transform 300ms,
+    box-shadow 300ms;
+}
+.c-hover-lift-lg:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--c-shadow-xl);
+  transition:
+    transform 300ms,
+    box-shadow 300ms;
+}
+
+.c-cursor-auto {
+  cursor: auto;
+}
+.c-cursor-default {
+  cursor: default;
+}
+.c-cursor-pointer {
+  cursor: pointer;
+}
+.c-cursor-wait {
+  cursor: wait;
+}
+.c-cursor-text {
+  cursor: text;
+}
+.c-cursor-move {
+  cursor: move;
+}
+.c-cursor-not-allowed {
+  cursor: not-allowed;
+}
+.c-cursor-grab {
+  cursor: grab;
+}
+.c-cursor-grabbing {
+  cursor: grabbing;
+}
+.c-cursor-zoom-in {
+  cursor: zoom-in;
+}
+.c-cursor-zoom-out {
+  cursor: zoom-out;
+}
+.c-cursor-crosshair {
+  cursor: crosshair;
+}
+.c-cursor-help {
+  cursor: help;
+}
+.c-cursor-none {
+  cursor: none;
+}
+
+.c-select-none {
+  user-select: none;
+  -webkit-user-select: none;
+}
+.c-select-text {
+  user-select: text;
+}
+.c-select-all {
+  user-select: all;
+}
+.c-select-auto {
+  user-select: auto;
+}
+
+.c-will-change-auto {
+  will-change: auto;
+}
+.c-will-change-scroll {
+  will-change: scroll-position;
+}
+.c-will-change-contents {
+  will-change: contents;
+}
+.c-will-change-transform {
+  will-change: transform;
+}
+.c-will-change-opacity {
+  will-change: opacity;
+}
