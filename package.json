@@ -1,6 +1,6 @@
 {
   "name": "flux-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A utility-first CSS framework with zero build step — dark mode, animations, forms, and a full design token system built in.",
   "main": "src/index.css",
   "files": [
