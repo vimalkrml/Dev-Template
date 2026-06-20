@@ -126,8 +126,9 @@ npm install @datafluxgrid/fluxgrid-css
 ### Via Git clone
 
 ```bash
-git clone https://github.com/vimalkrml/Dev-Template.git
-cd Dev-Template
+git clone https://github.com/vimalkrml/fluxgrid-css.git
+cd fluxgrid-css
+
 ```
 
 ---
