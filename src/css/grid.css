@@ -147,6 +147,18 @@
 .c-inline-flex {
   display: inline-flex;
 }
+.c-flex-row {
+  flex-direction: row;
+}
+.c-flex-col {
+  flex-direction: column;
+}
+.c-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.c-flex-col-reverse {
+  flex-direction: column-reverse;
+}
 .c-flex-wrap {
   flex-wrap: wrap;
 }
