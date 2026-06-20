@@ -4,9 +4,10 @@
 
 FluxGrid CSS is a complete, production-ready CSS framework that works without any build step, configuration file, or CLI setup. Install it once, import it once, and start building — with dark mode, animations, form components, scroll utilities, print utilities, and a full design token system included out of the box.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-fluxgrid--css.vercel.app-0070F3?style=for-the-badge&logo=vercel&logoColor=white)](https://fluxgrid-css.vercel.app/)
 [![npm version](https://img.shields.io/npm/v/@datafluxgrid/fluxgrid-css.svg?style=for-the-badge&color=CB3837)](https://www.npmjs.com/package/@datafluxgrid/fluxgrid-css)
 [![npm downloads](https://img.shields.io/npm/dt/@datafluxgrid/fluxgrid-css.svg?style=for-the-badge&color=CB3837)](https://www.npmjs.com/package/@datafluxgrid/fluxgrid-css)
-[![license](https://img.shields.io/npm/l/@datafluxgrid/fluxgrid-css.svg?style=for-the-badge&color=6C63FF)](https://github.com/vimalkrml/Dev-Template/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/@datafluxgrid/fluxgrid-css.svg?style=for-the-badge&color=6C63FF)](https://github.com/vimalkrml/fluxgrid-css/blob/main/LICENSE)
 
 ---
 
@@ -746,7 +747,7 @@ Direct pushes to `main` are not accepted. All changes go through Pull Requests a
 
 MIT License. Copyright Datafluxgrid.
 
-See [LICENSE](https://github.com/vimalkrml/Dev-Template/blob/main/LICENSE) for the full text.
+See [LICENSE](https://github.com/vimalkrml/fluxgrid-css/blob/main/LICENSE) for the full text.
 
 ---
 

@@ -1,6 +1,6 @@
 {
   "name": "@datafluxgrid/fluxgrid-css",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Utility-first CSS framework with zero build step. No CLI, no PostCSS, no config — just drop in one CSS file and use utility classes. Includes dark mode, design tokens, animations, and form styles built in.",
   "main": "src/index.css",
   "style": "src/index.css",
@@ -39,7 +39,7 @@
     "fluxgrid",
     "datafluxgrid"
   ],
-  "homepage": "https://github.com/vimalkrml/fluxgrid-css#readme",
+  "homepage": "https://fluxgrid-css.vercel.app/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vimalkrml/fluxgrid-css.git"
