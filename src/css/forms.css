@@ -691,3 +691,14 @@ input.c-select-toggle {
   margin-top: -7px;
   margin-left: -7px;
 }
+.c-select-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  cursor: default;
+}
+
+.c-select-toggle:checked ~ .c-select-backdrop {
+  display: block;
+}
