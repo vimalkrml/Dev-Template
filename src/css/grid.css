@@ -543,6 +543,64 @@
   .c-md-justify-center {
     justify-content: center;
   }
+  .c-md-text-xs {
+    font-size: 0.75rem;
+  }
+  .c-md-text-sm {
+    font-size: 0.875rem;
+  }
+  .c-md-text-base {
+    font-size: 1rem;
+  }
+  .c-md-text-lg {
+    font-size: 1.125rem;
+  }
+  .c-md-text-xl {
+    font-size: 1.25rem;
+  }
+  .c-md-text-2xl {
+    font-size: 1.5rem;
+  }
+  .c-md-text-3xl {
+    font-size: 1.875rem;
+  }
+  .c-md-text-4xl {
+    font-size: 2.25rem;
+  }
+  .c-md-text-5xl {
+    font-size: 3rem;
+  }
+  .c-md-text-6xl {
+    font-size: 3.75rem;
+  }
+
+  .c-md-py-16 {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .c-md-py-20 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .c-md-py-24 {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  .c-md-mb-10 {
+    margin-bottom: 40px;
+  }
+  .c-md-mb-12 {
+    margin-bottom: 48px;
+  }
+  .c-md-mb-16 {
+    margin-bottom: 64px;
+  }
+  .c-md-p-4 {
+    padding: 16px;
+  }
+  .c-md-p-6 {
+    padding: 24px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -640,6 +698,15 @@
   }
   .c-lg-justify-center {
     justify-content: center;
+  }
+  .c-lg-text-3xl {
+    font-size: 1.875rem;
+  }
+  .c-lg-text-4xl {
+    font-size: 2.25rem;
+  }
+  .c-lg-text-5xl {
+    font-size: 3rem;
   }
 }
 
