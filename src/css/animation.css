@@ -1030,3 +1030,23 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+.c-animate-fade-in,
+.c-animate-fade-in-up,
+.c-animate-fade-in-down,
+.c-animate-fade-in-left,
+.c-animate-fade-in-right,
+.c-animate-scale-in,
+.c-animate-zoom-in,
+.c-animate-slide-up,
+.c-animate-slide-down,
+.c-animate-slide-left,
+.c-animate-slide-right,
+.c-animate-drop-in,
+.c-animate-blur-in,
+.c-animate-rotate-in,
+.c-animate-flip-x,
+.c-animate-flip-y,
+.c-animate-roll-in {
+  will-change: opacity, transform;
+}
