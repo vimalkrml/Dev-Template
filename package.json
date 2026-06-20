@@ -1,0 +1,21 @@
+{
+  "name": "@datafluxgrid/fluxgrid-css",
+  "version": "1.0.17",
+  "description": "A utility-first CSS framework with zero build step — dark mode, animations, forms, and a full design token system built in.",
+  "main": "src/index.css",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "css",
+    "utility",
+    "framework",
+    "dark-mode",
+    "grid",
+    "animations",
+    "forms",
+    "fluxgrid",
+    "datafluxgrid"
+  ],
+  "license": "MIT"
+}

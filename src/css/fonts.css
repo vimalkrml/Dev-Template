@@ -1,10 +1,99 @@
-@font-face {
-  font-family: "Neco";
-  src: url("../assets/fonts/Neco-Variable.woff2") format("woff2-variations");
-  font-weight: 100 900;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..900;1,200..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Fira+Code:wght@300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&family=Space+Grotesk:wght@300..700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Geist:wght@100..900&display=swap");
+.c-font-inter {
+  font-family: "Inter", sans-serif;
+}
+.c-font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+.c-font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+.c-font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.c-font-open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+.c-font-lato {
+  font-family: "Lato", sans-serif;
+}
+.c-font-nunito {
+  font-family: "Nunito", sans-serif;
+}
+.c-font-merriweather {
+  font-family: "Merriweather", serif;
+}
+.c-font-playfair {
+  font-family: "Playfair Display", serif;
+}
+.c-font-fira-code {
+  font-family: "Fira Code", monospace;
+}
+.c-font-dm-sans {
+  font-family: "DM Sans", sans-serif;
+}
+.c-font-space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+}
+.c-font-outfit {
+  font-family: "Outfit", sans-serif;
+}
+.c-font-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.c-font-geist {
+  font-family: "Geist", sans-serif;
+}
+
+.c-font-thin {
+  font-weight: 100;
+}
+.c-font-extralight {
+  font-weight: 200;
+}
+.c-font-light {
+  font-weight: 300;
+}
+.c-font-regular {
+  font-weight: 400;
+}
+.c-font-medium {
+  font-weight: 500;
+}
+.c-font-semibold {
+  font-weight: 600;
+}
+.c-font-bold {
+  font-weight: 700;
+}
+.c-font-extrabold {
+  font-weight: 800;
+}
+.c-font-black {
+  font-weight: 900;
+}
+
+.c-font-italic {
+  font-style: italic;
+}
+.c-font-normal {
   font-style: normal;
 }
 
-body {
-  font-family: "Neco", sans-serif;
+.c-font-sans {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+.c-font-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+.c-font-mono {
+  font-family: "Fira Code", Consolas, "Courier New", monospace;
+}
+.c-font-system {
+  font-family: inherit;
 }

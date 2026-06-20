@@ -1,0 +1,310 @@
+.c-font-sans {
+  font-family: var(--c-font-sans);
+}
+.c-font-mono {
+  font-family: var(--c-font-mono);
+}
+.c-font-serif {
+  font-family: var(--c-font-serif);
+}
+
+.c-text-xs {
+  font-size: var(--c-text-xs);
+}
+.c-text-sm {
+  font-size: var(--c-text-sm);
+}
+.c-text-base {
+  font-size: var(--c-text-base);
+}
+.c-text-lg {
+  font-size: var(--c-text-lg);
+}
+.c-text-xl {
+  font-size: var(--c-text-xl);
+}
+.c-text-2xl {
+  font-size: var(--c-text-2xl);
+}
+.c-text-3xl {
+  font-size: var(--c-text-3xl);
+}
+.c-text-4xl {
+  font-size: var(--c-text-4xl);
+}
+.c-text-5xl {
+  font-size: var(--c-text-5xl);
+}
+.c-text-6xl {
+  font-size: var(--c-text-6xl);
+}
+.c-text-7xl {
+  font-size: var(--c-text-7xl);
+}
+.c-text-8xl {
+  font-size: var(--c-text-8xl);
+}
+
+.c-font-thin {
+  font-weight: 100;
+}
+.c-font-light {
+  font-weight: 300;
+}
+.c-font-normal {
+  font-weight: 400;
+}
+.c-font-medium {
+  font-weight: 500;
+}
+.c-font-semibold {
+  font-weight: 600;
+}
+.c-font-bold {
+  font-weight: 700;
+}
+.c-font-extrabold {
+  font-weight: 800;
+}
+.c-font-black {
+  font-weight: 900;
+}
+
+.c-leading-none {
+  line-height: 1;
+}
+.c-leading-tight {
+  line-height: 1.25;
+}
+.c-leading-snug {
+  line-height: 1.375;
+}
+.c-leading-normal {
+  line-height: 1.5;
+}
+.c-leading-relaxed {
+  line-height: 1.625;
+}
+.c-leading-loose {
+  line-height: 2;
+}
+.c-leading-3 {
+  line-height: 12px;
+}
+.c-leading-4 {
+  line-height: 16px;
+}
+.c-leading-5 {
+  line-height: 20px;
+}
+.c-leading-6 {
+  line-height: 24px;
+}
+.c-leading-7 {
+  line-height: 28px;
+}
+.c-leading-8 {
+  line-height: 32px;
+}
+.c-leading-9 {
+  line-height: 36px;
+}
+.c-leading-10 {
+  line-height: 40px;
+}
+
+.c-tracking-tighter {
+  letter-spacing: -0.05em;
+}
+.c-tracking-tight {
+  letter-spacing: -0.025em;
+}
+.c-tracking-normal {
+  letter-spacing: 0em;
+}
+.c-tracking-wide {
+  letter-spacing: 0.025em;
+}
+.c-tracking-wider {
+  letter-spacing: 0.05em;
+}
+.c-tracking-widest {
+  letter-spacing: 0.1em;
+}
+
+.c-text-left {
+  text-align: left;
+}
+.c-text-center {
+  text-align: center;
+}
+.c-text-right {
+  text-align: right;
+}
+.c-text-justify {
+  text-align: justify;
+}
+.c-text-start {
+  text-align: start;
+}
+.c-text-end {
+  text-align: end;
+}
+
+.c-uppercase {
+  text-transform: uppercase;
+}
+.c-lowercase {
+  text-transform: lowercase;
+}
+.c-capitalize {
+  text-transform: capitalize;
+}
+.c-normal-case {
+  text-transform: none;
+}
+
+.c-italic {
+  font-style: italic;
+}
+.c-not-italic {
+  font-style: normal;
+}
+
+.c-underline {
+  text-decoration-line: underline;
+}
+.c-overline {
+  text-decoration-line: overline;
+}
+.c-line-through {
+  text-decoration-line: line-through;
+}
+.c-no-underline {
+  text-decoration-line: none;
+}
+.c-underline-dotted {
+  text-decoration-style: dotted;
+}
+.c-underline-dashed {
+  text-decoration-style: dashed;
+}
+.c-underline-offset-1 {
+  text-underline-offset: 1px;
+}
+.c-underline-offset-2 {
+  text-underline-offset: 2px;
+}
+.c-underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
+.c-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.c-text-ellipsis {
+  text-overflow: ellipsis;
+}
+.c-text-clip {
+  text-overflow: clip;
+}
+.c-whitespace-normal {
+  white-space: normal;
+}
+.c-whitespace-nowrap {
+  white-space: nowrap;
+}
+.c-whitespace-pre {
+  white-space: pre;
+}
+.c-whitespace-pre-line {
+  white-space: pre-line;
+}
+.c-whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+.c-break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+.c-break-words {
+  overflow-wrap: break-word;
+}
+.c-break-all {
+  word-break: break-all;
+}
+.c-break-keep {
+  word-break: keep-all;
+}
+
+.c-list-none {
+  list-style-type: none;
+}
+.c-list-disc {
+  list-style-type: disc;
+}
+.c-list-decimal {
+  list-style-type: decimal;
+}
+.c-list-inside {
+  list-style-position: inside;
+}
+.c-list-outside {
+  list-style-position: outside;
+}
+
+.c-antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.c-subpixel-antialiased {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+.c-indent-0 {
+  text-indent: 0;
+}
+.c-indent-4 {
+  text-indent: 16px;
+}
+.c-indent-8 {
+  text-indent: 32px;
+}
+
+.c-align-baseline {
+  vertical-align: baseline;
+}
+.c-align-top {
+  vertical-align: top;
+}
+.c-align-middle {
+  vertical-align: middle;
+}
+.c-align-bottom {
+  vertical-align: bottom;
+}
+.c-align-text-top {
+  vertical-align: text-top;
+}
+.c-align-sub {
+  vertical-align: sub;
+}
+.c-align-super {
+  vertical-align: super;
+}
+
+.c-columns-1 {
+  columns: 1;
+}
+.c-columns-2 {
+  columns: 2;
+}
+.c-columns-3 {
+  columns: 3;
+}
+.c-columns-4 {
+  columns: 4;
+}

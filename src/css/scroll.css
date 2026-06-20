@@ -1,0 +1,188 @@
+.c-scroll-auto {
+  scroll-behavior: auto;
+}
+.c-scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.c-scroll-m-0 {
+  scroll-margin: 0;
+}
+.c-scroll-m-4 {
+  scroll-margin: 16px;
+}
+.c-scroll-m-8 {
+  scroll-margin: 32px;
+}
+.c-scroll-m-16 {
+  scroll-margin: 64px;
+}
+.c-scroll-mt-0 {
+  scroll-margin-top: 0;
+}
+.c-scroll-mt-4 {
+  scroll-margin-top: 16px;
+}
+.c-scroll-mt-8 {
+  scroll-margin-top: 32px;
+}
+.c-scroll-mt-16 {
+  scroll-margin-top: 64px;
+}
+.c-scroll-mt-20 {
+  scroll-margin-top: 80px;
+}
+
+.c-scroll-p-0 {
+  scroll-padding: 0;
+}
+.c-scroll-p-4 {
+  scroll-padding: 16px;
+}
+.c-scroll-p-8 {
+  scroll-padding: 32px;
+}
+.c-scroll-pt-0 {
+  scroll-padding-top: 0;
+}
+.c-scroll-pt-4 {
+  scroll-padding-top: 16px;
+}
+.c-scroll-pt-8 {
+  scroll-padding-top: 32px;
+}
+.c-scroll-pt-16 {
+  scroll-padding-top: 64px;
+}
+
+.c-snap-none {
+  scroll-snap-type: none;
+}
+.c-snap-x {
+  scroll-snap-type: x mandatory;
+}
+.c-snap-x-prox {
+  scroll-snap-type: x proximity;
+}
+.c-snap-y {
+  scroll-snap-type: y mandatory;
+}
+.c-snap-y-prox {
+  scroll-snap-type: y proximity;
+}
+.c-snap-both {
+  scroll-snap-type: both mandatory;
+}
+.c-snap-both-prox {
+  scroll-snap-type: both proximity;
+}
+
+.c-snap-start {
+  scroll-snap-align: start;
+}
+.c-snap-end {
+  scroll-snap-align: end;
+}
+.c-snap-center {
+  scroll-snap-align: center;
+}
+.c-snap-align-none {
+  scroll-snap-align: none;
+}
+
+.c-snap-normal {
+  scroll-snap-stop: normal;
+}
+.c-snap-always {
+  scroll-snap-stop: always;
+}
+
+.c-overscroll-auto {
+  overscroll-behavior: auto;
+}
+.c-overscroll-contain {
+  overscroll-behavior: contain;
+}
+.c-overscroll-none {
+  overscroll-behavior: none;
+}
+.c-overscroll-x-auto {
+  overscroll-behavior-x: auto;
+}
+.c-overscroll-x-contain {
+  overscroll-behavior-x: contain;
+}
+.c-overscroll-x-none {
+  overscroll-behavior-x: none;
+}
+.c-overscroll-y-auto {
+  overscroll-behavior-y: auto;
+}
+.c-overscroll-y-contain {
+  overscroll-behavior-y: contain;
+}
+.c-overscroll-y-none {
+  overscroll-behavior-y: none;
+}
+
+.c-touch-auto {
+  touch-action: auto;
+}
+.c-touch-none {
+  touch-action: none;
+}
+.c-touch-pan-x {
+  touch-action: pan-x;
+}
+.c-touch-pan-y {
+  touch-action: pan-y;
+}
+.c-touch-pan-left {
+  touch-action: pan-left;
+}
+.c-touch-pan-right {
+  touch-action: pan-right;
+}
+.c-touch-pan-up {
+  touch-action: pan-up;
+}
+.c-touch-pan-down {
+  touch-action: pan-down;
+}
+.c-touch-pinch-zoom {
+  touch-action: pinch-zoom;
+}
+.c-touch-manipulation {
+  touch-action: manipulation;
+}
+
+.c-scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.c-scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.c-scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-gray-300) transparent;
+}
+.c-scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.c-scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.c-scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--c-gray-300);
+  border-radius: 9999px;
+}
+.c-scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--c-gray-400);
+}
+
+.c-scrollbar-auto {
+  scrollbar-width: auto;
+}
