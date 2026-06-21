@@ -39,27 +39,28 @@ FluxGrid CSS is a complete, production-ready CSS framework that works without an
 
 Most CSS frameworks today require a build pipeline before you can write a single line of UI. FluxGrid CSS takes a different approach — it is a single CSS file that works anywhere, in any stack, with zero tooling required.
 
-| Feature                   | Tailwind                                | Bootstrap                            | Bulma                                | Pico                               | FluxGrid CSS          |
-| ------------------------- | --------------------------------------- | ------------------------------------ | ------------------------------------ | ---------------------------------- | --------------------- |
-| Zero build step           | Partial — CLI/Vite plugin needed¹       | Yes                                  | Yes                                  | Yes                                | Yes                   |
-| CDN ready                 | Partial — Play CDN not for production²  | Yes                                  | Yes                                  | Yes                                | Yes                   |
-| Dark mode built-in        | Partial — `@variant` directive required | Yes                                  | Yes                                  | Yes                                | Yes                   |
-| CSS Variable theming      | Yes — v4 `@theme`                       | Yes — 5.3+                           | Yes                                  | Yes — `--pico-` prefix             | Yes                   |
-| Form components included  | Partial — `@tailwindcss/forms` plugin   | Yes                                  | Yes                                  | Yes                                | Yes                   |
-| Animation library         | No                                      | No                                   | No                                   | No                                 | Yes — 50+ classes     |
-| Modular file imports      | No                                      | Partial — Sass partials, build step³ | Partial — Sass partials, build step³ | Yes — Sass `@use` modules          | Yes — plain CSS files |
-| Conflict-free prefix      | No                                      | No                                   | No                                   | Yes — `--pico-` variables          | Yes — `c-` classes    |
-| Reduced motion support    | No⁴                                     | No⁴                                  | No⁴                                  | Yes — gates progress-bar animation | Yes                   |
-| Font utilities (optional) | No                                      | No                                   | No                                   | No                                 | Yes — separate module |
-| Print utilities           | No                                      | Partial                              | No                                   | No                                 | Yes                   |
-| Scroll snap utilities     | Yes                                     | No                                   | No                                   | No                                 | Yes                   |
+| Feature                   | Tailwind | Bootstrap | Bulma    | Pico     | FluxGrid |
+| ------------------------- | -------- | --------- | -------- | -------- | -------- |
+| Zero build step           | Partial¹ | Yes       | Yes      | Yes      | Yes      |
+| CDN ready                 | Partial² | Yes       | Yes      | Yes      | Yes      |
+| Dark mode built-in        | Partial³ | Yes       | Yes      | Yes      | Yes      |
+| CSS Variable theming      | Yes      | Yes       | Yes      | Yes      | Yes      |
+| Form components included  | Partial⁴ | Yes       | Yes      | Yes      | Yes      |
+| Animation library         | No       | No        | No       | No       | Yes      |
+| Modular file imports      | No       | Partial⁵  | Partial⁵ | Yes      | Yes      |
+| Conflict-free prefix      | No       | No        | No       | Yes      | Yes      |
+| Reduced motion support    | No⁶      | No⁶       | No⁶      | Partial⁷ | Yes      |
+| Font utilities (optional) | No       | No        | No       | No       | Yes      |
+| Print utilities           | No       | Partial   | No       | No       | Yes      |
+| Scroll snap utilities     | Yes      | No        | No       | No       | Yes      |
 
 ¹ Tailwind v4 still requires its CLI or Vite plugin to generate output CSS.
-² Tailwind's Play CDN compiles in-browser at runtime — Tailwind's own docs say this isn't for production use.
-³ Bootstrap and Bulma support modular imports via Sass partials, which requires a Sass build step to use.
-⁴ Checked directly against each framework's published CSS — no `prefers-reduced-motion` rules present in Bootstrap or Bulma's source. Tailwind has no built-in reduced-motion handling of its own (the `motion-reduce:` variant exists, but it only applies if you write the rule yourself).
-
----
+² Tailwind's Play CDN compiles in-browser at runtime — not recommended for production per Tailwind's own docs.
+³ Requires Tailwind's `@variant` directive to be added manually.
+⁴ Requires the separate `@tailwindcss/forms` plugin.
+⁵ Supported via Sass partials, which requires a Sass build step to use.
+⁶ No `prefers-reduced-motion` rules present anywhere in the framework's published CSS.
+⁷ Pico gates reduced motion around its progress-bar animation only, not framework-wide.
 
 ## Features
 
