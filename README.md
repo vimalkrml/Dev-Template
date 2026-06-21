@@ -39,20 +39,25 @@ FluxGrid CSS is a complete, production-ready CSS framework that works without an
 
 Most CSS frameworks today require a build pipeline before you can write a single line of UI. FluxGrid CSS takes a different approach — it is a single CSS file that works anywhere, in any stack, with zero tooling required.
 
-| Feature                   | Tailwind          | Bootstrap | FluxGrid CSS          |
-| ------------------------- | ----------------- | --------- | --------------------- |
-| Zero build step           | No — requires CLI | Yes       | Yes                   |
-| CDN ready                 | Partial           | Yes       | Yes                   |
-| Dark mode built-in        | Config required   | No        | Yes                   |
-| CSS Variable theming      | No                | No        | Yes                   |
-| Form components included  | Plugin required   | Yes       | Yes                   |
-| Animation library         | No                | No        | Yes                   |
-| Modular file imports      | No                | No        | Yes                   |
-| Conflict-free prefix      | No                | No        | Yes — uses `c-`       |
-| Reduced motion support    | No                | No        | Yes                   |
-| Font utilities (optional) | No                | No        | Yes — separate module |
-| Print utilities           | No                | Partial   | Yes                   |
-| Scroll snap utilities     | Yes               | No        | Yes                   |
+| Feature                   | Tailwind                                | Bootstrap                            | Bulma                                | Pico                               | FluxGrid CSS          |
+| ------------------------- | --------------------------------------- | ------------------------------------ | ------------------------------------ | ---------------------------------- | --------------------- |
+| Zero build step           | Partial — CLI/Vite plugin needed¹       | Yes                                  | Yes                                  | Yes                                | Yes                   |
+| CDN ready                 | Partial — Play CDN not for production²  | Yes                                  | Yes                                  | Yes                                | Yes                   |
+| Dark mode built-in        | Partial — `@variant` directive required | Yes                                  | Yes                                  | Yes                                | Yes                   |
+| CSS Variable theming      | Yes — v4 `@theme`                       | Yes — 5.3+                           | Yes                                  | Yes — `--pico-` prefix             | Yes                   |
+| Form components included  | Partial — `@tailwindcss/forms` plugin   | Yes                                  | Yes                                  | Yes                                | Yes                   |
+| Animation library         | No                                      | No                                   | No                                   | No                                 | Yes — 50+ classes     |
+| Modular file imports      | No                                      | Partial — Sass partials, build step³ | Partial — Sass partials, build step³ | Yes — Sass `@use` modules          | Yes — plain CSS files |
+| Conflict-free prefix      | No                                      | No                                   | No                                   | Yes — `--pico-` variables          | Yes — `c-` classes    |
+| Reduced motion support    | No⁴                                     | No⁴                                  | No⁴                                  | Yes — gates progress-bar animation | Yes                   |
+| Font utilities (optional) | No                                      | No                                   | No                                   | No                                 | Yes — separate module |
+| Print utilities           | No                                      | Partial                              | No                                   | No                                 | Yes                   |
+| Scroll snap utilities     | Yes                                     | No                                   | No                                   | No                                 | Yes                   |
+
+¹ Tailwind v4 still requires its CLI or Vite plugin to generate output CSS.
+² Tailwind's Play CDN compiles in-browser at runtime — Tailwind's own docs say this isn't for production use.
+³ Bootstrap and Bulma support modular imports via Sass partials, which requires a Sass build step to use.
+⁴ Checked directly against each framework's published CSS — no `prefers-reduced-motion` rules present in Bootstrap or Bulma's source. Tailwind has no built-in reduced-motion handling of its own (the `motion-reduce:` variant exists, but it only applies if you write the rule yourself).
 
 ---
 
@@ -161,11 +166,123 @@ cd fluxgrid-css
 </html>
 ```
 
-### React, Next.js, or Vite
+## Quick Start
+
+### 1. Install
+
+```bash
+npm install @datafluxgrid/fluxgrid-css
+```
+
+Or skip the install entirely and drop in the CDN link:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/src/css/index.css"
+/>
+```
+
+### 2. Import in your project
+
+Same package, same import — just placed in the right entry point for your framework.
+
+#### React (Vite or Create React App)
 
 ```js
-// main.jsx or _app.jsx
+// main.jsx (Vite) or index.js (CRA)
 import "@datafluxgrid/fluxgrid-css/src/css/index.css";
+```
+
+#### Next.js
+
+Global CSS in Next.js can only be imported at the root layout level — importing it inside a regular component will throw a build error.
+
+```js
+// app/layout.js — App Router
+import "@datafluxgrid/fluxgrid-css/src/css/index.css";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+Using the Pages Router instead? Import it in `pages/_app.js` in the same way.
+
+#### Vue
+
+```js
+// main.js
+import { createApp } from "vue";
+import App from "./App.vue";
+import "@datafluxgrid/fluxgrid-css/src/css/index.css";
+
+createApp(App).mount("#app");
+```
+
+#### Angular
+
+Angular's build pipeline doesn't support arbitrary ESM CSS imports inside component files — register the stylesheet globally instead, either option works:
+
+```css
+/* src/styles.css */
+@import "@datafluxgrid/fluxgrid-css/src/css/index.css";
+```
+
+```json
+// angular.json
+"styles": [
+  "node_modules/@datafluxgrid/fluxgrid-css/src/css/index.css",
+  "src/styles.css"
+]
+```
+
+#### Only need part of the framework?
+
+Swap `index.css` for the individual modules you actually use — same import syntax, just point at the specific file(s) instead of the full bundle:
+
+```js
+import "@datafluxgrid/fluxgrid-css/src/css/tokens.css";
+import "@datafluxgrid/fluxgrid-css/src/css/grid.css";
+import "@datafluxgrid/fluxgrid-css/src/css/forms.css";
+```
+
+### 3. Start building
+
+Use `c-` prefixed classes directly in your HTML or JSX — no compiler step required.
+
+```html
+<div class="c-container">
+  <div class="c-row c-gap-4">
+    <div class="c-col-12 c-col-md-6">
+      <div class="c-p-6 c-rounded-xl c-shadow c-hover-lift c-transition">
+        <h2 class="c-text-xl c-font-bold">Card Title</h2>
+        <button class="c-btn c-btn-primary c-mt-4">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+Dark mode works the same way everywhere — toggle it manually, follow the system preference, or override the underlying tokens:
+
+```html
+<!-- Manual toggle -->
+<html data-theme="dark">
+  <!-- Auto via system preference -->
+  <html>
+    <!-- Override tokens -->
+    <style>
+      :root {
+        --c-primary-500: #6c63ff;
+      }
+    </style>
+  </html>
+</html>
 ```
 
 ### Modular — import only what you need

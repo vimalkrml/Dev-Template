@@ -1,6 +1,6 @@
 {
   "name": "@datafluxgrid/fluxgrid-css",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Utility-first CSS framework with zero build step. No CLI, no PostCSS, no config — just drop in one CSS file and use utility classes. Includes dark mode, design tokens, animations, and form styles built in.",
   "main": "src/index.css",
   "style": "src/index.css",
