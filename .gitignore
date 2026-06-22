@@ -1,0 +1,18 @@
+# .gitignore for fluxgrid-css package repo
+
+# Dependencies
+node_modules/
+
+# npm pack output
+*.tgz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*

@@ -1,21 +1,62 @@
 {
   "name": "@datafluxgrid/fluxgrid-css",
-  "version": "1.0.17",
-  "description": "A utility-first CSS framework with zero build step — dark mode, animations, forms, and a full design token system built in.",
-  "main": "src/index.css",
+  "version": "1.0.26",
+  "description": "Utility-first CSS framework with zero build step. No CLI, no PostCSS, no config — just drop in one CSS file and use utility classes. Includes dark mode, design tokens, animations, and form styles built in.",
+  "main": "dist/fluxgrid.min.css",
+  "style": "dist/fluxgrid.min.css",
+  "exports": {
+    ".": "./dist/fluxgrid.min.css",
+    "./full": "./dist/fluxgrid.css",
+    "./*": "./src/*"
+  },
   "files": [
-    "src"
+    "src",
+    "dist"
   ],
+  "scripts": {
+    "build": "node build.js",
+    "prepublishOnly": "npm run build"
+  },
   "keywords": [
     "css",
-    "utility",
-    "framework",
+    "css-framework",
+    "utility-first",
+    "utility-css",
+    "atomic-css",
+    "css-utilities",
+    "no-build",
+    "zero-config",
+    "no-postcss",
+    "vanilla-css",
+    "pure-css",
+    "lightweight-css",
+    "design-tokens",
+    "design-system",
+    "css-variables",
     "dark-mode",
-    "grid",
+    "responsive-design",
+    "flexbox",
+    "css-grid",
     "animations",
     "forms",
+    "tailwind-alternative",
+    "bootstrap-alternative",
+    "frontend",
     "fluxgrid",
     "datafluxgrid"
   ],
-  "license": "MIT"
+  "homepage": "https://fluxgrid-css.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vimalkrml/fluxgrid-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vimalkrml/fluxgrid-css/issues"
+  },
+  "author": "Vimal KR",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module"
 }

@@ -4,9 +4,10 @@
 
 FluxGrid CSS is a complete, production-ready CSS framework that works without any build step, configuration file, or CLI setup. Install it once, import it once, and start building — with dark mode, animations, form components, scroll utilities, print utilities, and a full design token system included out of the box.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-fluxgrid--css.vercel.app-0070F3?style=for-the-badge&logo=vercel&logoColor=white)](https://fluxgrid-css.vercel.app/)
 [![npm version](https://img.shields.io/npm/v/@datafluxgrid/fluxgrid-css.svg?style=for-the-badge&color=CB3837)](https://www.npmjs.com/package/@datafluxgrid/fluxgrid-css)
 [![npm downloads](https://img.shields.io/npm/dt/@datafluxgrid/fluxgrid-css.svg?style=for-the-badge&color=CB3837)](https://www.npmjs.com/package/@datafluxgrid/fluxgrid-css)
-[![license](https://img.shields.io/npm/l/@datafluxgrid/fluxgrid-css.svg?style=for-the-badge&color=6C63FF)](https://github.com/vimalkrml/Dev-Template/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/@datafluxgrid/fluxgrid-css.svg?style=for-the-badge&color=6C63FF)](https://github.com/vimalkrml/fluxgrid-css/blob/main/LICENSE)
 
 ---
 
@@ -38,20 +39,28 @@ FluxGrid CSS is a complete, production-ready CSS framework that works without an
 
 Most CSS frameworks today require a build pipeline before you can write a single line of UI. FluxGrid CSS takes a different approach — it is a single CSS file that works anywhere, in any stack, with zero tooling required.
 
-| Feature                   | Tailwind          | Bootstrap | FluxGrid CSS          |
-| ------------------------- | ----------------- | --------- | --------------------- |
-| Zero build step           | No — requires CLI | Yes       | Yes                   |
-| CDN ready                 | Partial           | Yes       | Yes                   |
-| Dark mode built-in        | Config required   | No        | Yes                   |
-| CSS Variable theming      | No                | No        | Yes                   |
-| Form components included  | Plugin required   | Yes       | Yes                   |
-| Animation library         | No                | No        | Yes                   |
-| Modular file imports      | No                | No        | Yes                   |
-| Conflict-free prefix      | No                | No        | Yes — uses `c-`       |
-| Reduced motion support    | No                | No        | Yes                   |
-| Font utilities (optional) | No                | No        | Yes — separate module |
-| Print utilities           | No                | Partial   | Yes                   |
-| Scroll snap utilities     | Yes               | No        | Yes                   |
+| Feature                   | Tailwind | Bootstrap | Bulma    | Pico     | FluxGrid |
+| ------------------------- | -------- | --------- | -------- | -------- | -------- |
+| Zero build step           | Partial¹ | Yes       | Yes      | Yes      | Yes      |
+| CDN ready                 | Partial² | Yes       | Yes      | Yes      | Yes      |
+| Dark mode built-in        | Partial³ | Yes       | Yes      | Yes      | Yes      |
+| CSS Variable theming      | Yes      | Yes       | Yes      | Yes      | Yes      |
+| Form components included  | Partial⁴ | Yes       | Yes      | Yes      | Yes      |
+| Animation library         | No       | No        | No       | No       | Yes      |
+| Modular file imports      | No       | Partial⁵  | Partial⁵ | Yes      | Yes      |
+| Conflict-free prefix      | No       | No        | No       | Yes      | Yes      |
+| Reduced motion support    | No⁶      | No⁶       | No⁶      | Partial⁷ | Yes      |
+| Font utilities (optional) | No       | No        | No       | No       | Yes      |
+| Print utilities           | No       | Partial   | No       | No       | Yes      |
+| Scroll snap utilities     | Yes      | No        | No       | No       | Yes      |
+
+¹ Tailwind v4 still requires its CLI or Vite plugin to generate output CSS.
+² Tailwind's Play CDN compiles in-browser at runtime — not recommended for production per Tailwind's own docs.
+³ Requires Tailwind's `@variant` directive to be added manually.
+⁴ Requires the separate `@tailwindcss/forms` plugin.
+⁵ Supported via Sass partials, which requires a Sass build step to use.
+⁶ No `prefers-reduced-motion` rules present anywhere in the framework's published CSS.
+⁷ Pico gates reduced motion around its progress-bar animation only, not framework-wide.
 
 ---
 
@@ -102,13 +111,13 @@ npm install @datafluxgrid/fluxgrid-css
 ### Via CDN — no install required
 
 ```html
-<!-- Full bundle -->
+<!-- Full bundle (minified, production-ready) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/src/css/index.css"
+  href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/dist/fluxgrid.min.css"
 />
 
-<!-- Individual modules -->
+<!-- Individual modules (modular, opt-in) -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/src/css/tokens.css"
@@ -126,8 +135,8 @@ npm install @datafluxgrid/fluxgrid-css
 ### Via Git clone
 
 ```bash
-git clone https://github.com/vimalkrml/Dev-Template.git
-cd Dev-Template
+git clone https://github.com/vimalkrml/fluxgrid-css.git
+cd fluxgrid-css
 ```
 
 ---
@@ -145,7 +154,7 @@ cd Dev-Template
     <title>My Project</title>
     <link
       rel="stylesheet"
-      href="node_modules/@datafluxgrid/fluxgrid-css/src/css/index.css"
+      href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/dist/fluxgrid.min.css"
     />
   </head>
   <body>
@@ -159,20 +168,108 @@ cd Dev-Template
 </html>
 ```
 
-### React, Next.js, or Vite
+---
+
+## Quick Start
+
+### 1. Install
+
+```bash
+npm install @datafluxgrid/fluxgrid-css
+```
+
+Or skip the install entirely and drop in the CDN link:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/dist/fluxgrid.min.css"
+/>
+```
+
+### 2. Import in your project
+
+Same package, same import — just placed in the right entry point for your framework.
+
+#### React (Vite or Create React App)
 
 ```js
-// main.jsx or _app.jsx
+// main.jsx (Vite) or index.js (CRA)
 import "@datafluxgrid/fluxgrid-css/src/css/index.css";
 ```
 
-### Modular — import only what you need
+#### Next.js
+
+Global CSS in Next.js can only be imported at the root layout level — importing it inside a regular component will throw a build error.
+
+```js
+// app/layout.js — App Router
+import "@datafluxgrid/fluxgrid-css/src/css/index.css";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+Using the Pages Router instead? Import it in `pages/_app.js` in the same way.
+
+#### Vue
+
+```js
+// main.js
+import { createApp } from "vue";
+import App from "./App.vue";
+import "@datafluxgrid/fluxgrid-css/src/css/index.css";
+
+createApp(App).mount("#app");
+```
+
+#### Angular
+
+Angular's build pipeline doesn't support arbitrary ESM CSS imports inside component files — register the stylesheet globally instead, either option works:
+
+```css
+/* src/styles.css */
+@import "@datafluxgrid/fluxgrid-css/src/css/index.css";
+```
+
+```json
+// angular.json
+"styles": [
+  "node_modules/@datafluxgrid/fluxgrid-css/src/css/index.css",
+  "src/styles.css"
+]
+```
+
+#### Only need part of the framework?
+
+Swap `index.css` for the individual modules you actually use — same import syntax, just point at the specific file(s) instead of the full bundle:
 
 ```js
 import "@datafluxgrid/fluxgrid-css/src/css/tokens.css";
 import "@datafluxgrid/fluxgrid-css/src/css/grid.css";
-import "@datafluxgrid/fluxgrid-css/src/css/spacing.css";
 import "@datafluxgrid/fluxgrid-css/src/css/forms.css";
+```
+
+### 3. Start building
+
+Use `c-` prefixed classes directly in your HTML or JSX — no compiler step required.
+
+```html
+<div class="c-container">
+  <div class="c-row">
+    <div class="c-col-12 c-col-md-6">
+      <div class="c-p-6 c-rounded-xl c-shadow c-hover-lift c-transition">
+        <h2 class="c-text-xl c-font-bold">Card Title</h2>
+        <button class="c-btn c-btn-primary c-mt-4">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
 
 ---
@@ -180,22 +277,26 @@ import "@datafluxgrid/fluxgrid-css/src/css/forms.css";
 ## File Structure
 
 ```
+dist/
+├── fluxgrid.css          Full bundle, unminified — readable source
+└── fluxgrid.min.css      Minified production bundle (recommended for CDN)
+
 src/css/
-├── index.css         Entry point — imports all modules
-├── tokens.css        CSS variables for colors, spacing, shadows, easing, and typography
-├── reset.css         Full browser normalisation reset
-├── grid.css          Flexbox grid, CSS Grid, containers, responsive columns
-├── spacing.css       Margin and padding utilities across all directions
-├── sizing.css        Width, height, min, max, and viewport unit utilities
-├── display.css       Display, position, overflow, z-index, float, aspect ratio
-├── typography.css    Font family, size, weight, line height, tracking, alignment
-├── colors.css        Text, background, border, and gradient color utilities
-├── effects.css       Shadows, borders, opacity, transforms, filters, transitions
-├── animation.css     50+ keyframe animations with duration, delay, and easing control
-├── forms.css         Input, textarea, select, checkbox, radio, button components
-├── scroll.css        Scroll snap, overscroll, touch action, scrollbar utilities
-├── print.css         Print show/hide, page breaks, print-only content
-└── fonts.css         Optional — Google Font utilities via c-font-* classes
+├── index.css             Entry point — imports all modules
+├── tokens.css            CSS variables for colors, spacing, shadows, easing, and typography
+├── reset.css             Full browser normalisation reset
+├── grid.css              Flexbox grid, CSS Grid, containers, responsive columns
+├── spacing.css           Margin and padding utilities across all directions
+├── sizing.css            Width, height, min, max, and viewport unit utilities
+├── display.css           Display, position, overflow, z-index, float, aspect ratio
+├── typography.css        Font family, size, weight, line height, tracking, alignment
+├── colors.css            Text, background, border, and gradient color utilities
+├── effects.css           Shadows, borders, opacity, transforms, filters, transitions
+├── animation.css         50+ keyframe animations with duration, delay, and easing control
+├── forms.css             Input, textarea, select, checkbox, radio, button components
+├── scroll.css            Scroll snap, overscroll, touch action, scrollbar utilities
+├── print.css             Print show/hide, page breaks, print-only content
+└── fonts.css             Optional — Google Font utilities via c-font-* classes
 ```
 
 ---
@@ -207,7 +308,9 @@ FluxGrid CSS supports dark mode out of the box with no JavaScript and no configu
 **Option 1 — Manual toggle via HTML attribute**
 
 ```html
-<html data-theme="dark"></html>
+<html data-theme="dark">
+  ...
+</html>
 ```
 
 **Option 2 — Automatic via system preference**
@@ -221,7 +324,10 @@ FluxGrid CSS supports dark mode out of the box with no JavaScript and no configu
 **Option 3 — JavaScript toggle**
 
 ```js
+// Enable dark mode
 document.documentElement.setAttribute("data-theme", "dark");
+
+// Switch back to light mode
 document.documentElement.setAttribute("data-theme", "light");
 ```
 
@@ -298,7 +404,7 @@ A 12-column responsive flexbox grid with five breakpoints and a full CSS Grid ut
   <div class="c-col-8">Main content</div>
 </div>
 
-<!-- Responsive columns — stacks on mobile, side by side on tablet, thirds on desktop -->
+<!-- Responsive — stacks on mobile, side by side on tablet, thirds on desktop -->
 <div class="c-row">
   <div class="c-col-12 c-col-md-6 c-col-lg-4">Card</div>
   <div class="c-col-12 c-col-md-6 c-col-lg-4">Card</div>
@@ -335,19 +441,21 @@ A 12-column responsive flexbox grid with five breakpoints and a full CSS Grid ut
 
 **Container widths**
 
+| Class               | Max width |
+| ------------------- | --------- |
+| `c-container`       | 1152px    |
+| `c-container-sm`    | 640px     |
+| `c-container-lg`    | 1024px    |
+| `c-container-xl`    | 1280px    |
+| `c-container-fluid` | 100%      |
+
 ```html
 <div class="c-container">
-  <!-- max-width: 1152px -->
-  <div class="c-container-sm">
-    <!-- max-width: 640px  -->
-    <div class="c-container-lg">
-      <!-- max-width: 1024px -->
-      <div class="c-container-xl">
-        <!-- max-width: 1280px -->
-        <div class="c-container-fluid"><!-- full width        --></div>
-      </div>
-    </div>
-  </div>
+  <!-- content centered at max 1152px -->
+</div>
+
+<div class="c-container-sm">
+  <!-- narrow centered content, max 640px -->
 </div>
 ```
 
@@ -507,7 +615,7 @@ Over 50 keyframe animations with full control over duration, delay, iteration co
 <!-- Typewriter effect -->
 <p class="c-animate-typewriter">This types itself out.</p>
 
-<!-- Control -->
+<!-- Control modifiers -->
 <div class="c-animate-fade-in c-animate-delay-300 c-animate-duration-700">
   Delayed, slower fade
 </div>
@@ -519,7 +627,7 @@ Over 50 keyframe animations with full control over duration, delay, iteration co
 
 **Available animations**
 
-fade-in, fade-out, fade-in-up, fade-in-down, fade-in-left, fade-in-right, fade-out-up, fade-out-down, slide-up, slide-down, slide-left, slide-right, slide-out-up, slide-out-down, slide-out-left, slide-out-right, scale-in, scale-out, scale-in-x, scale-in-y, zoom-in, zoom-out, flip-x, flip-y, rotate-in, rotate-out, spin, spin-reverse, spin-slow, spin-fast, ping, pulse, pulse-scale, bounce, bounce-x, shake, shake-y, wiggle, heartbeat, float, float-x, swing, rubber-band, jello, tada, glow, glow-text, ripple, draw, morph, flip-card, roll-in, drop-in, blur-in, blur-out, progress, blink, skeleton, shimmer, typewriter
+`fade-in` `fade-out` `fade-in-up` `fade-in-down` `fade-in-left` `fade-in-right` `fade-out-up` `fade-out-down` `slide-up` `slide-down` `slide-left` `slide-right` `slide-out-up` `slide-out-down` `slide-out-left` `slide-out-right` `scale-in` `scale-out` `scale-in-x` `scale-in-y` `zoom-in` `zoom-out` `flip-x` `flip-y` `rotate-in` `rotate-out` `spin` `spin-reverse` `spin-slow` `spin-fast` `ping` `pulse` `pulse-scale` `bounce` `bounce-x` `shake` `shake-y` `wiggle` `heartbeat` `float` `float-x` `swing` `rubber-band` `jello` `tada` `glow` `glow-text` `ripple` `draw` `morph` `flip-card` `roll-in` `drop-in` `blur-in` `blur-out` `progress` `blink` `skeleton` `shimmer` `typewriter`
 
 ---
 
@@ -557,18 +665,18 @@ All form components are styled through CSS only — no JavaScript, no dependenci
 
 <!-- Select sizes -->
 <select class="c-select c-select-sm">
-  ...
+  <option>Small</option>
 </select>
 <select class="c-select c-select-lg">
-  ...
+  <option>Large</option>
 </select>
 
 <!-- Select states -->
 <select class="c-select c-select-error">
-  ...
+  <option>Error</option>
 </select>
 <select class="c-select c-select-success">
-  ...
+  <option>Success</option>
 </select>
 
 <!-- Checkbox -->
@@ -701,11 +809,11 @@ FluxGrid CSS ships a separate optional font module that provides 15 Google Font 
 ```
 
 ```js
-// React / Vite
+// React / Vite / Next.js / Vue
 import "@datafluxgrid/fluxgrid-css/src/css/fonts.css";
 ```
 
-### Available fonts
+### Usage
 
 ```html
 <h1 class="c-font-poppins c-font-bold">Heading in Poppins Bold</h1>
@@ -715,9 +823,9 @@ import "@datafluxgrid/fluxgrid-css/src/css/fonts.css";
 <p class="c-font-dm-sans">Clean modern paragraph</p>
 ```
 
-**Font families:** inter, poppins, roboto, montserrat, open-sans, lato, nunito, merriweather, playfair, fira-code, dm-sans, space-grotesk, outfit, jakarta, geist
+**Font families:** `inter` `poppins` `roboto` `montserrat` `open-sans` `lato` `nunito` `merriweather` `playfair` `fira-code` `dm-sans` `space-grotesk` `outfit` `jakarta` `geist`
 
-**Font weights:** thin (100), extralight (200), light (300), regular (400), medium (500), semibold (600), bold (700), extrabold (800), black (900)
+**Font weights:** `thin` (100) `extralight` (200) `light` (300) `regular` (400) `medium` (500) `semibold` (600) `bold` (700) `extrabold` (800) `black` (900)
 
 ```html
 <h1 class="c-font-montserrat c-font-black">Black weight heading</h1>
@@ -745,7 +853,7 @@ Direct pushes to `main` are not accepted. All changes go through Pull Requests a
 
 MIT License. Copyright Datafluxgrid.
 
-See [LICENSE](https://github.com/vimalkrml/Dev-Template/blob/main/LICENSE) for the full text.
+See [LICENSE](https://github.com/vimalkrml/fluxgrid-css/blob/main/LICENSE) for the full text.
 
 ---
 
