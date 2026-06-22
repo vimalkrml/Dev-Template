@@ -62,6 +62,8 @@ Most CSS frameworks today require a build pipeline before you can write a single
 ⁶ No `prefers-reduced-motion` rules present anywhere in the framework's published CSS.
 ⁷ Pico gates reduced motion around its progress-bar animation only, not framework-wide.
 
+---
+
 ## Features
 
 **Zero build step.** No PostCSS, no CLI, no config file. Drop a link tag or run a single install command and you are ready.
@@ -109,13 +111,13 @@ npm install @datafluxgrid/fluxgrid-css
 ### Via CDN — no install required
 
 ```html
-<!-- Full bundle -->
+<!-- Full bundle (minified, production-ready) -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/src/css/index.css"
+  href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/dist/fluxgrid.min.css"
 />
 
-<!-- Individual modules -->
+<!-- Individual modules (modular, opt-in) -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/src/css/tokens.css"
@@ -135,7 +137,6 @@ npm install @datafluxgrid/fluxgrid-css
 ```bash
 git clone https://github.com/vimalkrml/fluxgrid-css.git
 cd fluxgrid-css
-
 ```
 
 ---
@@ -153,7 +154,7 @@ cd fluxgrid-css
     <title>My Project</title>
     <link
       rel="stylesheet"
-      href="node_modules/@datafluxgrid/fluxgrid-css/src/css/index.css"
+      href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/dist/fluxgrid.min.css"
     />
   </head>
   <body>
@@ -166,6 +167,8 @@ cd fluxgrid-css
   </body>
 </html>
 ```
+
+---
 
 ## Quick Start
 
@@ -180,7 +183,7 @@ Or skip the install entirely and drop in the CDN link:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/src/css/index.css"
+  href="https://cdn.jsdelivr.net/npm/@datafluxgrid/fluxgrid-css/dist/fluxgrid.min.css"
 />
 ```
 
@@ -258,7 +261,7 @@ Use `c-` prefixed classes directly in your HTML or JSX — no compiler step requ
 
 ```html
 <div class="c-container">
-  <div class="c-row c-gap-4">
+  <div class="c-row">
     <div class="c-col-12 c-col-md-6">
       <div class="c-p-6 c-rounded-xl c-shadow c-hover-lift c-transition">
         <h2 class="c-text-xl c-font-bold">Card Title</h2>
@@ -269,53 +272,31 @@ Use `c-` prefixed classes directly in your HTML or JSX — no compiler step requ
 </div>
 ```
 
-Dark mode works the same way everywhere — toggle it manually, follow the system preference, or override the underlying tokens:
-
-```html
-<!-- Manual toggle -->
-<html data-theme="dark">
-  <!-- Auto via system preference -->
-  <html>
-    <!-- Override tokens -->
-    <style>
-      :root {
-        --c-primary-500: #6c63ff;
-      }
-    </style>
-  </html>
-</html>
-```
-
-### Modular — import only what you need
-
-```js
-import "@datafluxgrid/fluxgrid-css/src/css/tokens.css";
-import "@datafluxgrid/fluxgrid-css/src/css/grid.css";
-import "@datafluxgrid/fluxgrid-css/src/css/spacing.css";
-import "@datafluxgrid/fluxgrid-css/src/css/forms.css";
-```
-
 ---
 
 ## File Structure
 
 ```
+dist/
+├── fluxgrid.css          Full bundle, unminified — readable source
+└── fluxgrid.min.css      Minified production bundle (recommended for CDN)
+
 src/css/
-├── index.css         Entry point — imports all modules
-├── tokens.css        CSS variables for colors, spacing, shadows, easing, and typography
-├── reset.css         Full browser normalisation reset
-├── grid.css          Flexbox grid, CSS Grid, containers, responsive columns
-├── spacing.css       Margin and padding utilities across all directions
-├── sizing.css        Width, height, min, max, and viewport unit utilities
-├── display.css       Display, position, overflow, z-index, float, aspect ratio
-├── typography.css    Font family, size, weight, line height, tracking, alignment
-├── colors.css        Text, background, border, and gradient color utilities
-├── effects.css       Shadows, borders, opacity, transforms, filters, transitions
-├── animation.css     50+ keyframe animations with duration, delay, and easing control
-├── forms.css         Input, textarea, select, checkbox, radio, button components
-├── scroll.css        Scroll snap, overscroll, touch action, scrollbar utilities
-├── print.css         Print show/hide, page breaks, print-only content
-└── fonts.css         Optional — Google Font utilities via c-font-* classes
+├── index.css             Entry point — imports all modules
+├── tokens.css            CSS variables for colors, spacing, shadows, easing, and typography
+├── reset.css             Full browser normalisation reset
+├── grid.css              Flexbox grid, CSS Grid, containers, responsive columns
+├── spacing.css           Margin and padding utilities across all directions
+├── sizing.css            Width, height, min, max, and viewport unit utilities
+├── display.css           Display, position, overflow, z-index, float, aspect ratio
+├── typography.css        Font family, size, weight, line height, tracking, alignment
+├── colors.css            Text, background, border, and gradient color utilities
+├── effects.css           Shadows, borders, opacity, transforms, filters, transitions
+├── animation.css         50+ keyframe animations with duration, delay, and easing control
+├── forms.css             Input, textarea, select, checkbox, radio, button components
+├── scroll.css            Scroll snap, overscroll, touch action, scrollbar utilities
+├── print.css             Print show/hide, page breaks, print-only content
+└── fonts.css             Optional — Google Font utilities via c-font-* classes
 ```
 
 ---
@@ -327,7 +308,9 @@ FluxGrid CSS supports dark mode out of the box with no JavaScript and no configu
 **Option 1 — Manual toggle via HTML attribute**
 
 ```html
-<html data-theme="dark"></html>
+<html data-theme="dark">
+  ...
+</html>
 ```
 
 **Option 2 — Automatic via system preference**
@@ -341,7 +324,10 @@ FluxGrid CSS supports dark mode out of the box with no JavaScript and no configu
 **Option 3 — JavaScript toggle**
 
 ```js
+// Enable dark mode
 document.documentElement.setAttribute("data-theme", "dark");
+
+// Switch back to light mode
 document.documentElement.setAttribute("data-theme", "light");
 ```
 
@@ -418,7 +404,7 @@ A 12-column responsive flexbox grid with five breakpoints and a full CSS Grid ut
   <div class="c-col-8">Main content</div>
 </div>
 
-<!-- Responsive columns — stacks on mobile, side by side on tablet, thirds on desktop -->
+<!-- Responsive — stacks on mobile, side by side on tablet, thirds on desktop -->
 <div class="c-row">
   <div class="c-col-12 c-col-md-6 c-col-lg-4">Card</div>
   <div class="c-col-12 c-col-md-6 c-col-lg-4">Card</div>
@@ -455,19 +441,21 @@ A 12-column responsive flexbox grid with five breakpoints and a full CSS Grid ut
 
 **Container widths**
 
+| Class               | Max width |
+| ------------------- | --------- |
+| `c-container`       | 1152px    |
+| `c-container-sm`    | 640px     |
+| `c-container-lg`    | 1024px    |
+| `c-container-xl`    | 1280px    |
+| `c-container-fluid` | 100%      |
+
 ```html
 <div class="c-container">
-  <!-- max-width: 1152px -->
-  <div class="c-container-sm">
-    <!-- max-width: 640px  -->
-    <div class="c-container-lg">
-      <!-- max-width: 1024px -->
-      <div class="c-container-xl">
-        <!-- max-width: 1280px -->
-        <div class="c-container-fluid"><!-- full width        --></div>
-      </div>
-    </div>
-  </div>
+  <!-- content centered at max 1152px -->
+</div>
+
+<div class="c-container-sm">
+  <!-- narrow centered content, max 640px -->
 </div>
 ```
 
@@ -627,7 +615,7 @@ Over 50 keyframe animations with full control over duration, delay, iteration co
 <!-- Typewriter effect -->
 <p class="c-animate-typewriter">This types itself out.</p>
 
-<!-- Control -->
+<!-- Control modifiers -->
 <div class="c-animate-fade-in c-animate-delay-300 c-animate-duration-700">
   Delayed, slower fade
 </div>
@@ -639,7 +627,7 @@ Over 50 keyframe animations with full control over duration, delay, iteration co
 
 **Available animations**
 
-fade-in, fade-out, fade-in-up, fade-in-down, fade-in-left, fade-in-right, fade-out-up, fade-out-down, slide-up, slide-down, slide-left, slide-right, slide-out-up, slide-out-down, slide-out-left, slide-out-right, scale-in, scale-out, scale-in-x, scale-in-y, zoom-in, zoom-out, flip-x, flip-y, rotate-in, rotate-out, spin, spin-reverse, spin-slow, spin-fast, ping, pulse, pulse-scale, bounce, bounce-x, shake, shake-y, wiggle, heartbeat, float, float-x, swing, rubber-band, jello, tada, glow, glow-text, ripple, draw, morph, flip-card, roll-in, drop-in, blur-in, blur-out, progress, blink, skeleton, shimmer, typewriter
+`fade-in` `fade-out` `fade-in-up` `fade-in-down` `fade-in-left` `fade-in-right` `fade-out-up` `fade-out-down` `slide-up` `slide-down` `slide-left` `slide-right` `slide-out-up` `slide-out-down` `slide-out-left` `slide-out-right` `scale-in` `scale-out` `scale-in-x` `scale-in-y` `zoom-in` `zoom-out` `flip-x` `flip-y` `rotate-in` `rotate-out` `spin` `spin-reverse` `spin-slow` `spin-fast` `ping` `pulse` `pulse-scale` `bounce` `bounce-x` `shake` `shake-y` `wiggle` `heartbeat` `float` `float-x` `swing` `rubber-band` `jello` `tada` `glow` `glow-text` `ripple` `draw` `morph` `flip-card` `roll-in` `drop-in` `blur-in` `blur-out` `progress` `blink` `skeleton` `shimmer` `typewriter`
 
 ---
 
@@ -677,18 +665,18 @@ All form components are styled through CSS only — no JavaScript, no dependenci
 
 <!-- Select sizes -->
 <select class="c-select c-select-sm">
-  ...
+  <option>Small</option>
 </select>
 <select class="c-select c-select-lg">
-  ...
+  <option>Large</option>
 </select>
 
 <!-- Select states -->
 <select class="c-select c-select-error">
-  ...
+  <option>Error</option>
 </select>
 <select class="c-select c-select-success">
-  ...
+  <option>Success</option>
 </select>
 
 <!-- Checkbox -->
@@ -821,11 +809,11 @@ FluxGrid CSS ships a separate optional font module that provides 15 Google Font 
 ```
 
 ```js
-// React / Vite
+// React / Vite / Next.js / Vue
 import "@datafluxgrid/fluxgrid-css/src/css/fonts.css";
 ```
 
-### Available fonts
+### Usage
 
 ```html
 <h1 class="c-font-poppins c-font-bold">Heading in Poppins Bold</h1>
@@ -835,9 +823,9 @@ import "@datafluxgrid/fluxgrid-css/src/css/fonts.css";
 <p class="c-font-dm-sans">Clean modern paragraph</p>
 ```
 
-**Font families:** inter, poppins, roboto, montserrat, open-sans, lato, nunito, merriweather, playfair, fira-code, dm-sans, space-grotesk, outfit, jakarta, geist
+**Font families:** `inter` `poppins` `roboto` `montserrat` `open-sans` `lato` `nunito` `merriweather` `playfair` `fira-code` `dm-sans` `space-grotesk` `outfit` `jakarta` `geist`
 
-**Font weights:** thin (100), extralight (200), light (300), regular (400), medium (500), semibold (600), bold (700), extrabold (800), black (900)
+**Font weights:** `thin` (100) `extralight` (200) `light` (300) `regular` (400) `medium` (500) `semibold` (600) `bold` (700) `extrabold` (800) `black` (900)
 
 ```html
 <h1 class="c-font-montserrat c-font-black">Black weight heading</h1>
